@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FinalExam.ViewModels.SetA"
+             x:Class="FinalExam.Views.SetA.Question3.Page3a">
+    <!--<ContentPage.BindingContext>
+        <vm:Page3aViewModel/>
+    </ContentPage.BindingContext>-->
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+                <Image Source="{Binding CurrentUser.ProfileImageSource}" 
+                   WidthRequest="100" HeightRequest="100"/>
+                <Label Text="{Binding CurrentUser.UserName,StringFormat='Name : {0}'}"/>
+                <Label Text="{Binding CurrentUser.Birthday,StringFormat='Birthday : {0}'}" />
+                <Button Text="Go To Next Page" Command="{Binding GoToNextPageCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

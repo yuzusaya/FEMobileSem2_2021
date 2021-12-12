@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FinalExam.ViewModels.SetB"
+             xmlns:local="clr-namespace:FinalExam.CustomRenderer"
+             x:Class="FinalExam.Views.SetB.Page3b">
+    <ContentPage.BindingContext>
+        <vm:Page3bViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="40">
+            <!--<Entry VerticalOptions="CenterAndExpand" Placeholder="This is placeholder for entry"
+                HorizontalOptions="FillAndExpand">
+                
+            </Entry>-->
+            <local:CustomEntry VerticalOptions="CenterAndExpand" Placeholder="This is placeholder for entry"
+                HorizontalOptions="FillAndExpand" TextChangedCommand="{Binding TextChangedCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

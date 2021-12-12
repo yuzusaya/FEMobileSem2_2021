@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:FinalExam.Converters"
+             x:Class="FinalExam.Views.SetA.Question1.Page1a">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:FontSizeToFontAttributesConverter x:Key="FontSizeToFontAttributesConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <!--<StackLayout>
+            <Grid VerticalOptions="CenterAndExpand" RowDefinitions="*" Margin="20">
+                <Label x:Name="label1" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                <Slider x:Name="slider1" Grid.Row="1" HorizontalOptions="FillAndExpand"/>
+                <Label x:Name="label2" Text="Sample text" Grid.Row="2"
+                       HorizontalOptions="CenterAndExpand"/>
+            </Grid>
+        </StackLayout>-->
+        <StackLayout>
+            <Grid VerticalOptions="CenterAndExpand" RowDefinitions="*" Margin="20">
+                <Label x:Name="label1" Grid.Row="0" HorizontalOptions="CenterAndExpand" Text="{Binding Source={x:Reference slider},Path=Value,StringFormat='Font Size:{0:F0}'}"/>
+                <Slider x:Name="slider1" Grid.Row="1" HorizontalOptions="FillAndExpand" Maximum="32" Minimum="16" Value="24" MinimumTrackColor="Blue" MaximumTrackColor="Red"/>
+                <Label x:Name="label2" Text="Sample text" Grid.Row="2" HorizontalOptions="CenterAndExpand" FontSize="{Binding Source={x:Reference slider},Path=Value}"
+                       FontAttributes="{Binding Source={x:Reference slider},Path=Value,Converter={StaticResource FontSizeToFontAttributesConverter}}"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

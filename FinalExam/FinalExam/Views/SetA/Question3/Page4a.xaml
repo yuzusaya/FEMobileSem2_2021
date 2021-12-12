@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FinalExam.ViewModels.SetA"
+             Title="Page 2"
+             x:Class="FinalExam.Views.SetA.Question3.Page4a">
+    <!--<ContentPage.BindingContext>
+        <vm:Page4aViewModel/>
+    </ContentPage.BindingContext>-->
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+                <Image Source="{Binding CurrentUser.ProfileImageSource}" 
+                   WidthRequest="100" HeightRequest="100">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeProfileCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Name"/>
+                <Entry Text="{Binding CurrentUser.UserName}"/>
+                <Label Text="Birthday" />
+                <DatePicker Date="{Binding CurrentUser.Birthday}"/>
+                <Button Text="Save" Command="{Binding SaveCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

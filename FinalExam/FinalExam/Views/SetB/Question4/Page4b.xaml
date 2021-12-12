@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:vm="clr-namespace:FinalExam.ViewModels.SetB"
+             x:Class="FinalExam.Views.SetB.Page4b"
+             x:Name="ThisPage">
+    <!--<ContentPage.BindingContext>
+        <vm:Page4bViewModel/>
+    </ContentPage.BindingContext>-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding GoToAddRecordCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding PostRecords}" Margin="40">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout xct:TouchEffect.Command="{Binding BindingContext.GoToRecordDetailCommand,Source={x:Reference ThisPage}}" xct:TouchEffect.CommandParameter="{Binding .}" 
+                                     xct:TouchEffect.LongPressCommand="{Binding BindingContext.DeletePostCommand,Source={x:Reference ThisPage}}"
+                                     xct:TouchEffect.LongPressCommandParameter="{Binding .}" Margin="0,10">
+                            <Frame CornerRadius="20" BorderColor="Black">
+                                <StackLayout>
+                                    <Label Text="{Binding Title}" FontAttributes="Bold" MaxLines="1" LineBreakMode="TailTruncation"/>
+                                    <Label Text="{Binding Body}" MaxLines="3" LineBreakMode="TailTruncation"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

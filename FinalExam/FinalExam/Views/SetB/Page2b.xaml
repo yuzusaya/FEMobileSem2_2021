@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="FinalExam.Views.SetB.Page2b">
+    <ContentPage.Content>
+        <StackLayout Margin="40,0" VerticalOptions="CenterAndExpand">
+            <Entry x:Name="PhoneEntry"
+                       HorizontalTextAlignment="Center" 
+                       Placeholder="0112223333" 
+                       HorizontalOptions="FillAndExpand"/>
+            <Label Text="Invalid Phone Number" TextColor="Red" IsVisible="False"/>
+            <Entry x:Name="PasswordEntry"
+                       HorizontalTextAlignment="Center"
+                       IsPassword="True"
+                       Placeholder="Password" 
+                       HorizontalOptions="FillAndExpand"/>
+            <Label Text="Password length should be greater than 5" TextColor="Red" IsVisible="False"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,15">
+                <CheckBox x:Name="TermsAndConditionsCheckbox" HorizontalOptions="Start"/>
+                <Label x:Name="TermsAndConditionsLabel" Text="I have read the terms and conditions" TextColor="Black"
+                           FontSize="Small" HorizontalOptions="Start" Margin="5">
+                </Label>
+            </StackLayout>
+
+            <Button x:Name="RegisterButton" Text="Register" FontSize="Medium" CornerRadius="20"
+                    VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"
+                    IsEnabled="False"/>
+        </StackLayout>
+        <!--<StackLayout Margin="40,0" VerticalOptions="CenterAndExpand">
+            <Entry x:Name="PhoneEntry"
+                       HorizontalTextAlignment="Center" 
+                       Placeholder="name@domain.com" 
+                       HorizontalOptions="FillAndExpand"
+                   Keyboard="Numeric">
+                <Entry.Behaviors>
+                    <xct:NumericValidationBehavior Flags="ValidateOnAttaching,ValidateOnValueChanging" x:Name="PhoneValidator" MaximumDecimalPlaces="0" MinimumValue="0"/>
+                </Entry.Behaviors>
+            </Entry>
+            <Label Text="Invalid Phone Number" TextColor="Red" IsVisible="{Binding Source={x:Reference PhoneValidator},Path=IsNotValid}"/>
+            <Entry x:Name="PasswordEntry"
+                       HorizontalTextAlignment="Center"
+                       IsPassword="True"
+                       Placeholder="Password" 
+                       HorizontalOptions="FillAndExpand">
+                <Entry.Behaviors>
+                    <xct:CharactersValidationBehavior MinimumLength="6" Flags="ValidateOnAttaching,ValidateOnValueChanging" x:Name="PasswordValidator"/>
+                </Entry.Behaviors>
+            </Entry>
+            <Label Text="Password length should be greater than 5" TextColor="Red" IsVisible="{Binding Source={x:Reference PasswordValidator},Path=IsNotValid}"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="0,15">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </StackLayout.GestureRecognizers>
+                <CheckBox x:Name="TermsAndConditionsCheckbox" HorizontalOptions="Start"/>
+                <Label x:Name="TermsAndConditionsLabel" Text="I have read the terms and conditions" TextColor="Black"
+                           FontSize="Small" HorizontalOptions="Start" Margin="5">
+                </Label>
+            </StackLayout>
+
+            <Button x:Name="RegisterButton" Text="Register" FontSize="Medium" CornerRadius="20"
+                            VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"
+                    IsEnabled="False">
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference PhoneValidator},
+                                   Path=IsValid}"
+                               Value="True" />
+                            <BindingCondition Binding="{Binding Source={x:Reference PasswordValidator},
+                                   Path=IsValid}"
+                               Value="True" />
+                            <BindingCondition Binding="{Binding Source={x:Reference TermsAndConditionsCheckbox},
+                                   Path=IsChecked}"
+                               Value="True" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsEnabled" Value="True" />
+                    </MultiTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackLayout>-->
+    </ContentPage.Content>
+</ContentPage>
